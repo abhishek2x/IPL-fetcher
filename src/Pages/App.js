@@ -1,13 +1,13 @@
 import React from 'react'
-import ButtonAppBar from '../components/ButtonAppBar'
-import CenteredGrid from '../components/CenteredGrid'
+import ResponsiveDrawer from '../components/ResponsiveDrawer'
+import { TabContextProvider } from '../Context/TabContext'
+
 
 function App() {
   return (
-    <div>
-      <ButtonAppBar />
-      <CenteredGrid />
-    </div>
+    <TabContextProvider>
+      <ResponsiveDrawer />
+    </TabContextProvider>
   )
 }
 
