@@ -65,10 +65,10 @@ function ResponsiveDrawer(props) {
   };
 
   const drawer = (
-    <div>
+    <>
       <div className={classes.toolbar} />
+      <Button variant="contained" color="primary">Facet Filters</Button>
       <div className={classes.root}>
-        <Button variant="contained">Default</Button>
       </div>
       <Divider />
       <List>
@@ -88,7 +88,7 @@ function ResponsiveDrawer(props) {
           </ListItem>
         ))}
       </List>
-    </div>
+    </>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;

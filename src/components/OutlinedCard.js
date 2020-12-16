@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard() {
+export default function OutlinedCard(props) {
   const classes = useStyles();
   const bullet = <span className={classes.bullet}>•</span>;
 
@@ -31,15 +31,15 @@ export default function OutlinedCard() {
       <Card className={classes.root} variant="outlined">
         <CardContent>
           <Typography className={classes.title} color="textSecondary" gutterBottom>
-            Word of the Day
+          {props.match.Season} - {props.match.date}
         </Typography>
-          <Typography variant="h5" component="h2">
-            Title
+          <Typography variant="h6" component="h6">
+          {props.match.team1} VS {props.match.team2}
         </Typography>
           <Typography variant="body2" component="p">
-            well meaning and kindly.
+            {props.match.city}
           <br />
-            {'"a benevolent smile"'}
+            {props.match.venue}
           </Typography>
         </CardContent>
       </Card>

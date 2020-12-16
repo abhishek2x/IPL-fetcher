@@ -1,33 +1,23 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Grid from '@material-ui/core/Grid';
 import OutlinedCard from '../components/OutlinedCard';
+import MatchData from "../Data/matches.json"
+
 
 function Matches() {
+  const [matches, setMatches] = useState(MatchData);
+  useEffect(() => {
+    console.log(matches)
+  }, [])
+
   return (
     <Grid container spacing={3}>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
-      <Grid item xs={4}>
-        <OutlinedCard />
-      </Grid>
+      {matches.map((match) => (
+        <Grid item xs={4}>
+          <OutlinedCard match={match}/>
+        </Grid>
+      ))}
     </Grid>
-
   )
 }
 
