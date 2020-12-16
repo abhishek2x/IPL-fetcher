@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "team": "Pune Warriors"
+  },
+  {
+    "id": 2,
+    "team": "Kolkata Knight Riders"
+  },
+  {
+    "id": 3,
+    "team": "Rajasthan Royals"
+  },
+  {
+    "id": 4,
+    "team": "Kochi Tuskers Kerala"
+  },
+  {
+    "id": 5,
+    "team": "Gujarat Lions"
+  },
+  {
+    "id": 6,
+    "team": "Chennai Super Kings"
+  },
+  {
+    "id": 7,
+    "team": "Rising Pune Supergiants"
+  },
+  {
+    "id": 8,
+    "team": "Delhi Daredevils"
+  },
+  {
+    "id": 9,
+    "team": "Deccan Chargers"
+  },
+  {
+    "id": 10,
+    "team": "Delhi Capitals"
+  },
+  {
+    "id": 11,
+    "team": "Mumbai Indians"
+  },
+  {
+    "id": 12,
+    "team": "Sunrisers Hyderabad"
+  },
+  {
+    "id": 13,
+    "team": "Rising Pune Supergiant"
+  },
+  {
+    "id": 14,
+    "team": "Royal Challengers Bangalore"
+  },
+  {
+    "id": 15,
+    "team": "Kings XI Punjab"
+  }
+]

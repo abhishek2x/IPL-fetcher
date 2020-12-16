@@ -22,7 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function OutlinedCard(props) {
+export default function MatchCard(props) {
   const classes = useStyles();
   const bullet = <span className={classes.bullet}>•</span>;
 

@@ -1,24 +1,24 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid';
-import OutlinedCard from '../components/OutlinedCard';
+import MatchCard from '../components/MatchCard';
 
 function City() {
   return (
     <Grid container spacing={3}>
       <Grid item xs={4}>
-        <OutlinedCard />
+        <MatchCard />
       </Grid>
       <Grid item xs={4}>
-        <OutlinedCard />
+        <MatchCard />
       </Grid>
       <Grid item xs={4}>
-        <OutlinedCard />
+        <MatchCard />
       </Grid>
       <Grid item xs={4}>
-        <OutlinedCard />
+        <MatchCard />
       </Grid>
       <Grid item xs={4}>
-        <OutlinedCard />
+        <MatchCard />
       </Grid>
     </Grid>
 

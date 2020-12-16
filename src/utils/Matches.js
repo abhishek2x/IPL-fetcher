@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Grid from '@material-ui/core/Grid';
-import OutlinedCard from '../components/OutlinedCard';
+import MatchCard from '../components/MatchCard';
 import MatchData from "../Data/matches.json"
 
 
@@ -14,7 +14,7 @@ function Matches() {
     <Grid container spacing={3}>
       {matches.map((match) => (
         <Grid item xs={4}>
-          <OutlinedCard match={match}/>
+          <MatchCard match={match}/>
         </Grid>
       ))}
     </Grid>

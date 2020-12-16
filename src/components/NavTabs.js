@@ -7,12 +7,13 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Suspense, lazy } from 'react';
-import Team from '../utils/Team';
 import City from '../utils/City';
 import { TabContext } from '../Context/TabContext';
 import { CircularProgress } from '@material-ui/core';
 // import Matches from '../utils/Matches';
+// import Player from '../utils/Player';
 const Matches = React.lazy(() => import('../utils/Matches'));
+const Player = React.lazy(() => import('../utils/Player'));
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -85,8 +86,7 @@ export default function NavTabs() {
           aria-label="Tabs for Options"
         >
           <LinkTab label="MATCHES" />
-          {/* <LinkTab label="TEAMS"/>
-          <LinkTab label="CITY"/> */}
+          <LinkTab label="PLAYER" />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
@@ -94,12 +94,11 @@ export default function NavTabs() {
           <Matches />
         </Suspense>
       </TabPanel>
-      {/* <TabPanel value={value} index={1}>
-        <Team />
+      <TabPanel value={value} index={1}>
+        <Suspense fallback={<CircularProgress disableShrink />}>
+          <Player />
+        </Suspense>
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        <City/>
-      </TabPanel> */}
     </div>
   );
 }
