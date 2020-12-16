@@ -27,45 +27,84 @@ https://www.kaggle.com/ramjidoolla/ipl-data-set
 ## Project Structure
 
 ├── archive
-│   ├── deliveries.csv
-│   ├── matches.csv
-│   ├── most_runs_average_strikerate.csv
-│   ├── Players.xlsx
-│   ├── teams.csv
-│   └── teamwise_home_and_away.csv
-├── package.json
-├── package-lock.json
-├── public
-│   ├── favicon.ico
-│   ├── index.html
-│   ├── logo192.png
-│   ├── logo512.png
-│   ├── manifest.json
-│   └── robots.txt
-├── README.md
-├── src
-│   ├── components
-│   │   ├── Filter.js
-│   │   ├── MatchCard.js
-│   │   ├── NavTabs.js
-│   │   ├── PlayerCard.js
-│   │   └── ResponsiveDrawer.js
-│   ├── Context
-│   │   └── TabContext.js
-│   ├── Data
-│   │   ├── matches.json
-│   │   ├── mostRuns.json
-│   │   ├── teams.json
-│   │   └── years.json
-│   ├── index.js
-│   ├── Pages
-│   │   ├── a.js
-│   │   └── App.js
-│   └── utils
-│       ├── City.js
-│       ├── Matches.js
-│       └── Player.js
-└── yarn.lock
 
+│   ├── deliveries.csv
+
+│   ├── matches.csv
+
+│   ├── most_runs_average_strikerate.
+csv
+
+│   ├── Players.xlsx
+
+│   ├── teams.csv
+
+│   └── teamwise_home_and_away.csv
+
+├── package.json
+
+├── package-lock.json
+
+├── public
+
+│   ├── favicon.ico
+
+│   ├── index.html
+
+│   ├── logo192.png
+
+│   ├── logo512.png
+
+│   ├── manifest.json
+
+│   └── robots.txt
+
+├── README.md
+
+├── src
+
+│   ├── components
+
+│   │   ├── Filter.js
+
+│   │   ├── MatchCard.js
+
+│   │   ├── NavTabs.js
+
+│   │   ├── PlayerCard.js
+
+│   │   └── ResponsiveDrawer.js
+
+│   ├── Context
+
+│   │   └── TabContext.js
+
+│   ├── Data
+
+│   │   ├── matches.json
+
+│   │   ├── mostRuns.json
+
+│   │   ├── teams.json
+
+│   │   └── years.json
+
+│   ├── index.js
+
+│   ├── Pages
+
+│   │   ├── a.js
+
+│   │   └── App.js
+
+│   └── utils
+
+│       ├── City.js
+
+│       ├── Matches.js
+
+│       └── Player.js
+
+└── yarn.lock
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
