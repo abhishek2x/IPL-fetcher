@@ -5,6 +5,11 @@ Discovery page for IPL where users can search & use facet filters to find differ
 entities – players, teams, owners & venus. Users should be able to filter based on any attributes related to the entity. It as easy, intuitive and as less steps as 
 possible for the user to reach a particular entity.
 
+## Look and Feel
+
+<img src="./readme_images/layout1.png"></img>
+<img src="./readme_images/layout1.png"></img>
+
 ## Getting Started
 * Fork and Clone the repo
   `git clone https://github.com/abhishek2x/IPL-fetcher.git`
