@@ -7,9 +7,9 @@ export const TeamContext = createContext();
 // For year_checked state
 
 export const TeamContextProvider = props => {
-  const [data, setDate] = useState([]);
+  const [data, setData] = useState([]);
   return (
-    <TeamContext.Provider value={[data, setDate]}>
+    <TeamContext.Provider value={[data, setData]}>
       {props.children}
     </TeamContext.Provider>
   );

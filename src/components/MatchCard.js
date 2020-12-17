@@ -24,7 +24,6 @@ const useStyles = makeStyles({
 
 export default function MatchCard(props) {
   const classes = useStyles();
-  const bullet = <span className={classes.bullet}>•</span>;
 
   return (
     <Paper>

@@ -1,13 +1,13 @@
 import React from 'react'
 import MainFrame from '../components/MainFrame'
-// import { FilterClickContextProvider } from '../Context/FilterClick'
+import { QueryContextProvider } from '../Context/QueryContext'
 import { TabContextProvider } from '../Context/TabContext'
 import { TeamContextProvider } from '../Context/TeamContext'
 import { YearContextProvider } from '../Context/YearContext'
 
 function App() {
   return (
-    // <FilterClickContextProvider>
+    <QueryContextProvider>
       <TabContextProvider>
         <YearContextProvider>
           <TeamContextProvider>
@@ -15,7 +15,7 @@ function App() {
           </TeamContextProvider>
         </YearContextProvider>
       </TabContextProvider>
-    // </FilterClickContextProvider>
+    </QueryContextProvider>
   )
 }
 

@@ -7,13 +7,12 @@ import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
 import { Suspense, lazy } from 'react';
-import City from '../utils/City';
 import { TabContext } from '../Context/TabContext';
 import { CircularProgress } from '@material-ui/core';
 // import Matches from '../utils/Matches';
 // import Player from '../utils/Player';
-const Matches = React.lazy(() => import('../utils/Matches'));
-const Player = React.lazy(() => import('../utils/Player'));
+const Matches = lazy(() => import('../utils/Matches'));
+const Player = lazy(() => import('../utils/Player'));
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -40,13 +39,6 @@ TabPanel.propTypes = {
   index: PropTypes.any.isRequired,
   value: PropTypes.any.isRequired,
 };
-
-function a11yProps(index) {
-  return {
-    id: `nav-tab-${index}`,
-    'aria-controls': `nav-tabpanel-${index}`,
-  };
-}
 
 function LinkTab(props) {
   return (

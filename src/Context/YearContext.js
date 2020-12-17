@@ -7,9 +7,9 @@ export const YearContext = createContext();
 // For year_checked state
 
 export const YearContextProvider = props => {
-  const [data, setDate] = useState([]);
+  const [data, setData] = useState([]);
   return (
-    <YearContext.Provider value={[data, setDate]}>
+    <YearContext.Provider value={[data, setData]}>
       {props.children}
     </YearContext.Provider>
   );

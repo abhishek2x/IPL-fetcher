@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
@@ -49,18 +49,10 @@ export default function Filter() {
   const classes = useStyles();
 
   const [team_checked, setTeamChecked] = React.useContext(TeamContext);
-  const [teams, setTeams] = React.useState(TeamData);
+  const [teams] = React.useState(TeamData);
 
   const [year_checked, setYearChecked] = React.useContext(YearContext);
-  const [years, setYear] = React.useState(YearData);
-
-  // useEffect(() => {
-  //   console.log(team_checked)
-  // }, [team_checked])
-
-  // useEffect(() => {
-  //   console.log(year_checked)
-  // }, [year_checked])
+  const [years] = React.useState(YearData);
 
   const handleToggle = (value, element) => () => {
     let para = [];
@@ -130,7 +122,7 @@ export default function Filter() {
           const labelId = `transfer-list-all-item-${value}-label`;
 
           let ListText;
-          if (element == "team") {
+          if (element === "team") {
             ListText = <ListItemText id={labelId} primary={`${value.team}`} />
           } else {
             ListText = <ListItemText id={labelId} primary={`${value}`} />
@@ -159,7 +151,6 @@ export default function Filter() {
     <Grid container spacing={2} justify="center" alignItems="center" className={classes.root}>
       <Grid item>{customList('TEAMS', teams, team_checked, "team")}</Grid>
       <Grid item>{customList('YEAR', years, year_checked, "year")}</Grid>
-      {/* <Grid item>{customList('CITY', left)}</Grid> */}
     </Grid>
   );
 }

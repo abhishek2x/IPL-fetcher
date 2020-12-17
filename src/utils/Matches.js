@@ -4,18 +4,35 @@ import MatchCard from '../components/MatchCard';
 import MatchData from "../Data/matches.json"
 import { YearContext } from '../Context/YearContext';
 import { TeamContext } from '../Context/TeamContext';
-// import { FilterClickContext } from '../Context/FilterClick';
+import { QueryContext } from '../Context/QueryContext';
 
 
 function Matches() {
-  const [year_checked, setYearChecked] = React.useContext(YearContext);
-  const [team_checked, setTeamChecked] = React.useContext(TeamContext);
+  const [year_checked] = useContext(YearContext);
+  const [team_checked] = useContext(TeamContext);
   const [matches, setMatches] = useState(MatchData);
-  // const [click, setClick] = useContext(FilterClickContext)
+  const [query] = useContext(QueryContext)
 
   useEffect(() => {
-    // console.log(team_checked);
-    // console.log(year_checked);
+    if (query.length > 0) {
+      let newMatches = []
+      const getResuts = (main, query) => {
+        main.forEach(match => {
+          if (query === match.team2 || query === match.team1) {
+            newMatches.push(match);
+          }
+        })
+      }
+      // console.log("query to be searched: ", query);
+      getResuts(matches, query);
+      setMatches(newMatches);
+      // console.log("New Matches: ", newMatches);
+    } else {
+      setMatches(MatchData);
+    }
+  }, [query])
+
+  useEffect(() => {
     if (team_checked.length > 0 || year_checked.length > 0) {
       let newMatches = []
 
@@ -29,10 +46,7 @@ function Matches() {
       }
       const TeamFilteredMatches = (main, checker) => {
         main.forEach(match => {
-          const element1 = match.team1;
-          const element2 = match.team2;
-
-          if (checker.includes(element1) || checker.includes(element2)) {
+          if (checker.includes(match.team2) || checker.includes(match.team1)) {
             newMatches.push(match);
           }
         });
@@ -45,8 +59,6 @@ function Matches() {
     } else {
       setMatches(MatchData);
     }
-    // console.log("Changing to false")
-    // setClick(0);
   }, [team_checked, year_checked])
 
   return (

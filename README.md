@@ -7,7 +7,7 @@ possible for the user to reach a particular entity.
 
 ## Getting Started
 * Fork and Clone the repo
-  `git clone `
+  `git clone https://github.com/abhishek2x/IPL-fetcher.git`
 * Change the directory
   `cd IPL-fetcher`
 * Install node dependencies
@@ -20,91 +20,26 @@ possible for the user to reach a particular entity.
 * Material UI
 * GitHub Pages
 * Netlify
+* React Context API for State Management
+
+## Optimisations Implemented
+* Code Splitting
+* Using Lazy Loading (React.lazy and Suspense)
+
+
+## Loading Time
+* Finish: 1.24 s
+* DOMContentLoaded: 2.34 s
+* Load: 4.19 s
+
+## Possible Optimisations in the Current Application
+* Long list Loading using `react-window` 
+* Using React.PureComponent
+
+*The React ecosystem is vast and powerful. We can leverage the numerous tools that are available to us to build huge complex applications. Above are just a few techniques that can make our applications fast and smooth. The additional effort is definitely worth the benefits of getting a higher-performance, more maintainable codebase.*
 
 ### Sample data you can use:
 https://www.kaggle.com/ramjidoolla/ipl-data-set
 
-## Project Structure
-
-├── archive
-
-│   ├── deliveries.csv
-
-│   ├── matches.csv
-
-│   ├── most_runs_average_strikerate.
-csv
-
-│   ├── Players.xlsx
-
-│   ├── teams.csv
-
-│   └── teamwise_home_and_away.csv
-
-├── package.json
-
-├── package-lock.json
-
-├── public
-
-│   ├── favicon.ico
-
-│   ├── index.html
-
-│   ├── logo192.png
-
-│   ├── logo512.png
-
-│   ├── manifest.json
-
-│   └── robots.txt
-
-├── README.md
-
-├── src
-
-│   ├── components
-
-│   │   ├── Filter.js
-
-│   │   ├── MatchCard.js
-
-│   │   ├── NavTabs.js
-
-│   │   ├── PlayerCard.js
-
-│   │   └── ResponsiveDrawer.js
-
-│   ├── Context
-
-│   │   └── TabContext.js
-
-│   ├── Data
-
-│   │   ├── matches.json
-
-│   │   ├── mostRuns.json
-
-│   │   ├── teams.json
-
-│   │   └── years.json
-
-│   ├── index.js
-
-│   ├── Pages
-
-│   │   ├── a.js
-
-│   │   └── App.js
-
-│   └── utils
-
-│       ├── City.js
-
-│       ├── Matches.js
-
-│       └── Player.js
-
-└── yarn.lock
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

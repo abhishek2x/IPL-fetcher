@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -8,14 +8,15 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { fade, makeStyles, useTheme } from '@material-ui/core/styles';
 import NavTabs from './NavTabs';
-import { Button } from '@material-ui/core';
+import { Button, InputBase } from '@material-ui/core';
 import Filter from './Filter';
-// import { FilterClickContext } from '../Context/FilterClick';
+import SearchIcon from '@material-ui/icons/Search';
+import { QueryContext } from '../Context/QueryContext';
+
 
 const drawerWidth = 240;
-
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -46,14 +47,55 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+  }, search: {
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: fade(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: fade(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
   },
+  searchIcon: {
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 0),
+    // vertical padding + font size from searchIcon
+    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      width: '12ch',
+      '&:focus': {
+        width: '20ch',
+      },
+    },
+  },
+
 }));
 
 function MainFrame(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [input, setInput] = useState("")
+  const [data, setData] = useContext(QueryContext)
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -61,9 +103,8 @@ function MainFrame(props) {
 
   const drawer = (
     <>
-    <Button variant="contained" color="secondary">Facet Filters</Button>
-    <br/>
-      <Button variant="contained" color="default">Apply</Button>
+      <Button variant="contained" color="secondary">Facet Filters</Button>
+      <br />
       <div className={classes.root}>
         <Filter />
       </div>
@@ -71,6 +112,14 @@ function MainFrame(props) {
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
+  const handleSearch = (e) => {
+    setInput(e.target.value)
+  }
+  const makeQuery = (e) => {
+    e.preventDefault()
+    setData(input)
+    setInput("")
+  }
 
   return (
     <div className={classes.root}>
@@ -87,8 +136,23 @@ function MainFrame(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap >
-            IPL Fetcher
+            <b>IPL Fetcher</b> - <i>Getting data like never before</i>
           </Typography>
+          <form onSubmit={makeQuery} className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              value={input}
+              onChange={handleSearch}
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </form>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
