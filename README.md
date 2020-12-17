@@ -2,8 +2,7 @@
 
 ## Introduction
 Discovery page for IPL where users can search & use facet filters to find different
-entities – players, teams, owners & venus. Users should be able to filter based on any attributes related to the entity. It as easy, intuitive and as less steps as 
-possible for the user to reach a particular entity.
+entities – players, teams, owners & venus. Users should be able to filter based on any attributes related to the entity. It as easy, intuitive and as less steps as possible for the user to reach a particular entity.
 
 ## Look and Feel
 
@@ -31,8 +30,7 @@ possible for the user to reach a particular entity.
 * Code Splitting
 * Using Lazy Loading (React.lazy and Suspense)
 
-
-## Loading Time
+## Loading Time - Calculated using Chrome Dev Tools
 * Finish: 1.24 s
 * DOMContentLoaded: 2.34 s
 * Load: 4.19 s
@@ -40,6 +38,11 @@ possible for the user to reach a particular entity.
 ## Possible Optimisations in the Current Application
 * Long list Loading using `react-window` 
 * Using React.PureComponent
+
+## Website Link 
+Website is currently hosted on GitHub pages and Netlify
+Link 1: <a href="https://abhishek2x.github.io/IPL-fetcher/">https://abhishek2x.github.io/IPL-fetcher/<a/>
+Link 2
 
 *The React ecosystem is vast and powerful. We can leverage the numerous tools that are available to us to build huge complex applications. Above are just a few techniques that can make our applications fast and smooth. The additional effort is definitely worth the benefits of getting a higher-performance, more maintainable codebase.*
 
