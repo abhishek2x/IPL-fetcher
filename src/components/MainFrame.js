@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,6 +12,7 @@ import { makeStyles, useTheme } from '@material-ui/core/styles';
 import NavTabs from './NavTabs';
 import { Button } from '@material-ui/core';
 import Filter from './Filter';
+// import { FilterClickContext } from '../Context/FilterClick';
 
 const drawerWidth = 240;
 
@@ -48,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ResponsiveDrawer(props) {
+function MainFrame(props) {
   const { window } = props;
   const classes = useStyles();
   const theme = useTheme();
@@ -60,8 +61,9 @@ function ResponsiveDrawer(props) {
 
   const drawer = (
     <>
-      <div className={classes.toolbar} />
-      <Button variant="contained" color="primary">Facet Filters</Button>
+    <Button variant="contained" color="secondary">Facet Filters</Button>
+    <br/>
+      <Button variant="contained" color="default">Apply</Button>
       <div className={classes.root}>
         <Filter />
       </div>
@@ -73,8 +75,8 @@ function ResponsiveDrawer(props) {
   return (
     <div className={classes.root}>
       <CssBaseline />
-      <AppBar position="fixed" className={classes.appBar}>
-        <Toolbar>
+      <AppBar position="fixed" className={classes.appBar} color="secondary">
+        <Toolbar >
           <IconButton
             color="inherit"
             aria-label="open drawer"
@@ -84,7 +86,7 @@ function ResponsiveDrawer(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap >
             IPL Fetcher
           </Typography>
         </Toolbar>
@@ -124,7 +126,7 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+MainFrame.propTypes = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
@@ -132,4 +134,4 @@ ResponsiveDrawer.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default MainFrame;

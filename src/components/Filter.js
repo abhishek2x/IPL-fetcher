@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useContext } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import List from '@material-ui/core/List';
@@ -11,6 +11,9 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Divider from '@material-ui/core/Divider';
 import TeamData from "../Data/teams.json"
 import YearData from "../Data/years.json"
+import { TeamContext } from '../Context/TeamContext';
+import { YearContext } from '../Context/YearContext';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -45,11 +48,19 @@ function union(a, b) {
 export default function Filter() {
   const classes = useStyles();
 
-  const [team_checked, setTeamChecked] = React.useState([]);
+  const [team_checked, setTeamChecked] = React.useContext(TeamContext);
   const [teams, setTeams] = React.useState(TeamData);
 
-  const [year_checked, setYearChecked] = React.useState([]);
+  const [year_checked, setYearChecked] = React.useContext(YearContext);
   const [years, setYear] = React.useState(YearData);
+
+  // useEffect(() => {
+  //   console.log(team_checked)
+  // }, [team_checked])
+
+  // useEffect(() => {
+  //   console.log(year_checked)
+  // }, [year_checked])
 
   const handleToggle = (value, element) => () => {
     let para = [];

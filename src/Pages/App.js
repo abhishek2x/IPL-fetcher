@@ -1,12 +1,21 @@
 import React from 'react'
-import ResponsiveDrawer from '../components/ResponsiveDrawer'
+import MainFrame from '../components/MainFrame'
+// import { FilterClickContextProvider } from '../Context/FilterClick'
 import { TabContextProvider } from '../Context/TabContext'
+import { TeamContextProvider } from '../Context/TeamContext'
+import { YearContextProvider } from '../Context/YearContext'
 
 function App() {
   return (
-    <TabContextProvider>
-      <ResponsiveDrawer />
-    </TabContextProvider>
+    // <FilterClickContextProvider>
+      <TabContextProvider>
+        <YearContextProvider>
+          <TeamContextProvider>
+            <MainFrame />
+          </TeamContextProvider>
+        </YearContextProvider>
+      </TabContextProvider>
+    // </FilterClickContextProvider>
   )
 }
 
