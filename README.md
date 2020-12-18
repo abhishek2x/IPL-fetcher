@@ -53,9 +53,8 @@ entities – players, teams, owners & venus. Users should be able to filter base
 ***
 
 ## Website Link 
-Website is currently hosted on GitHub pages and Netlify
+Website is currently hosted on GitHub pages
 Link 1: <a href="https://abhishek2x.github.io/IPL-fetcher/">https://abhishek2x.github.io/IPL-fetcher/<a/>
-Link 2
 
 
 ***
