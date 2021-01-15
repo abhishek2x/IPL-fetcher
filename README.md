@@ -10,7 +10,7 @@ entities – players, teams, owners & venus. Users should be able to filter base
 
 <img src="./readme_images/layout1.png"></img>
 ***
-<img src="./readme_images/layout1.png"></img>
+<img src="./readme_images/layout2.png"></img>
 
 ***
 
