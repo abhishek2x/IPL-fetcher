@@ -105,6 +105,7 @@ function MainFrame(props) {
     <>
       <Button variant="contained" color="secondary">Facet Filters</Button>
       <br />
+      {props.switchComp}
       <div className={classes.root}>
         <Filter />
       </div>
